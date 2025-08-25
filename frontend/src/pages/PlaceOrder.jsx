@@ -42,7 +42,7 @@ const PlaceOrder = () => {
       receipt: order.receipt,
       handler: async (response) => {
         try {
-          const { data } = await axios.post(`${backendUrl}/order/verifyRazorpay`, response, { headers: { "Authorization": `Bearer ${token}` } })
+          const { data } = await axios.post(`${backendUrl}/api/v1/order/verifyRazorpay`, response, { headers: { "Authorization": `Bearer ${token}` } })
 
           if (data.success) {
             navigate("/orders")
@@ -82,7 +82,7 @@ const PlaceOrder = () => {
       switch (paymentMethod) {
 
         case 'cod':
-          const response = await axios.post(`${backendUrl}/order/placeorder`, { items, address, amount }, {
+          const response = await axios.post(`${backendUrl}/api/v1/order/placeorder`, { items, address, amount }, {
             headers: { "Authorization": `Bearer ${token}` }
           })
 
@@ -96,7 +96,7 @@ const PlaceOrder = () => {
           break;
 
         case 'stripe':
-          const responseStripe = await axios.post(`${backendUrl}/order/stripe`, { items, address, amount }, {
+          const responseStripe = await axios.post(`${backendUrl}/api/v1/order/stripe`, { items, address, amount }, {
             headers: { "Authorization": `Bearer ${token}` }
           })
 
@@ -111,7 +111,7 @@ const PlaceOrder = () => {
           break;
 
         case 'razorpay':
-          const responseRazorpay = await axios.post(`${backendUrl}/order/razorpay`, { items, amount, address }, {
+          const responseRazorpay = await axios.post(`${backendUrl}/api/v1/order/razorpay`, { items, amount, address }, {
             headers: { "Authorization": `Bearer ${token}` }
           })
 

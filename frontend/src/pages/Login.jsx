@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${backendUrl}/user/login`, {
+      const response = await axios.post(`${backendUrl}/api/v1/user/login`, {
         email,
         password
       }, {

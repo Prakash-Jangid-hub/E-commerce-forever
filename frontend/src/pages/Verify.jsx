@@ -19,7 +19,7 @@ const Verify = () => {
                 return null;
             }
 
-            const response = await axios.post(`${BACKEND_URL}/order/verifystripe`, { success, orderId }, {
+            const response = await axios.post(`${backendUrl}/api/v1/order/verifystripe`, { success, orderId }, {
                 headers: { "Authorization": `Bearer ${token}` }
             })
 

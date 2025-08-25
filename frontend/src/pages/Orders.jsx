@@ -16,7 +16,7 @@ const Orders = () => {
         return null
       }
 
-      const response = await axios.get(`${backendUrl}/order/userorders`, {
+      const response = await axios.get(`${backendUrl}/api/v1/order/userorders`, {
         headers: { "Authorization": `Bearer ${token}` }
       })
 

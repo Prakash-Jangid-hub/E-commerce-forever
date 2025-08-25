@@ -16,7 +16,7 @@ const Login = () => {
     const onSubmitHandler = async (e) => {
         try {
             e.preventDefault();
-            const response = await axios.post(`${BACKEND_URL}/user/adminlogin`, { email, password },
+            const response = await axios.post(`${BACKEND_URL}/api/v1/user/adminlogin`, { email, password },
                 {
                     withCredentials: true,
                     headers: { "Content-Type": "application/json" }

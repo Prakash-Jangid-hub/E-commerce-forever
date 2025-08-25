@@ -29,7 +29,7 @@ const ShopContextProvider = (props) => {
         if (token) {
             try {
                 const response = await axios.post(
-                    `${backendUrl}/cart/addtocart`,
+                    `${backendUrl}/api/v1/cart/addtocart`,
                     { itemId, size },
                     { headers: { Authorization: `Bearer ${token}` } }
                 );
@@ -45,7 +45,7 @@ const ShopContextProvider = (props) => {
 
     const removeProductFromCart = async (itemId, size) => {
         try {
-            const response = await axios.put(`${backendUrl}/cart/removeproduct`, { itemId, size }, {
+            const response = await axios.put(`${backendUrl}/api/v1/cart/removeproduct`, { itemId, size }, {
                 headers: { "Authorization": `Bearer ${token}` }
             })
 
@@ -67,7 +67,7 @@ const ShopContextProvider = (props) => {
 
     const getUserCart = async () => {
         try {
-            const response = await axios.get(`${backendUrl}/cart/getusercart`, {
+            const response = await axios.get(`${backendUrl}/api/v1/cart/getusercart`, {
                 headers: { "Authorization": `Bearer ${token}` }
             })
 
@@ -94,7 +94,7 @@ const ShopContextProvider = (props) => {
 
     const getProductData = async () => {
         try {
-            const response = await axios.get(`${backendUrl}/product/listproducts`)
+            const response = await axios.get(`${backendUrl}/api/v1/product/listproducts`)
 
             setProducts(response.data.products)
         } catch (error) {
@@ -102,11 +102,12 @@ const ShopContextProvider = (props) => {
         }
     }
 
+
     useEffect(() => {
         if (token) {
             getUserCart()
         }
-    }, [token])
+    }, [token, cartItems])
 
     useEffect(() => {
         getProductData()

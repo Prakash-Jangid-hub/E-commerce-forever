@@ -19,7 +19,7 @@ const Orders = () => {
     }
 
     try {
-      const response = await axios.get(`${BACKEND_URL}/order/allorders`, {
+      const response = await axios.get(`${BACKEND_URL}/api/v1/order/allorders`, {
         headers: { "Authorization": `Bearer ${token}` }
       })
 
@@ -37,7 +37,7 @@ const Orders = () => {
 
   const updateOrderStatus = async (e, orderId) => {
     try {
-      const response = await axios.put(`${BACKEND_URL}/order/status`, { orderId, status: e.target.value }, {
+      const response = await axios.put(`${BACKEND_URL}/api/v1/order/status`, { orderId, status: e.target.value }, {
         headers: { "Authorization": `Bearer ${token}` }
       })
       

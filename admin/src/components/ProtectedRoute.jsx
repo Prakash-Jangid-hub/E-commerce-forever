@@ -15,7 +15,7 @@ const ProtectedRoute = ({ children }) => {
             }
 
             try {
-                const response = await axios.get(`${BACKEND_URL}/user/adminverify`, {
+                const response = await axios.get(`${BACKEND_URL}/api/v1/user/adminverify`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 

@@ -43,7 +43,7 @@ const Add = () => {
         formData.append("images", img)
       });
 
-      const response = await axios.post(`${BACKEND_URL}/product/addproduct`, formData,
+      const response = await axios.post(`${BACKEND_URL}/api/v1/product/addproduct`, formData,
         {
           withCredentials: true,
 

@@ -10,7 +10,7 @@ const List = () => {
 
   const fetchList = async () => {
     try {
-      const response = await axios.get(`${BACKEND_URL}/product/listproducts`,
+      const response = await axios.get(`${BACKEND_URL}/api/v1/product/listproducts`,
         {
           headers: { "Authorization": `Bearer ${token}` }
         }
@@ -24,7 +24,7 @@ const List = () => {
 
   const removeProduct = async (productId) => {
     try {
-      const response = await axios.delete(`${BACKEND_URL}/product/removeproduct/${productId}`, {
+      const response = await axios.delete(`${BACKEND_URL}/api/v1/product/removeproduct/${productId}`, {
         withCredentials: true,
         headers: { "Authorization": `Bearer ${token}` }
       })
