@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import SideBar from './components/SideBar'
+import SideBar from "./components/Sidebar.jsx"
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Add from './pages/Add'
 import List from './pages/List'
@@ -8,7 +8,6 @@ import Orders from './pages/Orders'
 import Login from './components/Login'
 import { ToastContainer } from 'react-toastify'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
-import { AuthProvider } from './context/authContext.jsx'
 
 
 const App = () => {
