@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 
-const allowOrigins = ["http://localhost:5174", "http://localhost:5173"]
+const allowOrigins = [process.env.ADMIN_FRONTEND_URL, process.env.USER_FRONTEND_URL]
 
 app.use(cors({
     origin: allowOrigins,
