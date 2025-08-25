@@ -27,7 +27,7 @@ const Signup = () => {
             setToken(response.data.token)
             toast.success(response.data.message)
         } catch (error) {
-            toast.error(error.message)
+            toast.error(error.response.data.message)
         }
     }
 
